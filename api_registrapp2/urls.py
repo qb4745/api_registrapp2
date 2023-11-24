@@ -4,15 +4,15 @@ from django.urls import path
 
 from ninja import NinjaAPI
 
-from api.api import router as usuario_router
+from api.api import router as router
+from api.api import router as clase_router
+from api.api import router as clase_usuario_router
 from django.views.generic import RedirectView
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
 
 api = NinjaAPI()
-api.add_router("/usuario/", usuario_router)
+api.add_router("/registrapp/", router)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
